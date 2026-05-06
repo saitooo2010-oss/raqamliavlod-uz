@@ -1,0 +1,3 @@
+from django.contrib import admin
+from .models import ArticleCategoryModel,ArticleCommentModel,ArticleRateModel,ArticlesModel
+admin.site.register([ArticleCategoryModel,ArticleCommentModel,ArticleRateModel,ArticlesModel])

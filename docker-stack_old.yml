@@ -1,0 +1,99 @@
+version: "3.9"
+
+services:
+    backend:
+        image: ghcr.io/abdulkhafizov07/raqamliavloduz/backend:latest
+        deploy:
+            resources:
+                limits:
+                    cpus: "2.0"
+                    memory: 256M
+                reservations:
+                    cpus: "1.0"
+                    memory: 128M
+        ports:
+            - target: 8000
+              published: 15003
+              mode: ingress
+        environment:
+            - DJANGO_SECRET_KEY_FILE=/run/secrets/raqamliavlod_django_secret_key
+            - RAQAMLIAVLOD_DATABASE_NAME_FILE=/run/secrets/raqamliavlod_postgres_database
+            - RAQAMLIAVLOD_DATABASE_USERNAME_FILE=/run/secrets/raqamliavlod_postgres_username
+            - RAQAMLIAVLOD_DATABASE_PASSWORD_FILE=/run/secrets/raqamliavlod_postgres_password
+        volumes:
+            - ./media:/app/media
+        secrets:
+            - raqamliavlod_django_secret_key
+            - raqamliavlod_postgres_database
+            - raqamliavlod_postgres_username
+            - raqamliavlod_postgres_password
+        depends_on:
+            - pgbouncer
+
+    frontend:
+        image: ghcr.io/abdulkhafizov07/raqamliavloduz/frontend:latest
+        deploy:
+            resources:
+                limits:
+                    cpus: "2.0"
+                    memory: 256M
+                reservations:
+                    cpus: "1.0"
+                    memory: 128M
+        ports:
+            - target: 3000
+              published: 15002
+              mode: ingress
+
+    postgres:
+        image: postgres:16-alpine
+        environment:
+            POSTGRES_USER_FILE: /run/secrets/raqamliavlod_postgres_username
+            POSTGRES_PASSWORD_FILE: /run/secrets/raqamliavlod_postgres_password
+            POSTGRES_DB_FILE: /run/secrets/raqamliavlod_postgres_database
+        volumes:
+            - pg_data:/var/lib/postgresql/data
+        deploy:
+            resources:
+                limits:
+                    cpus: "2.0"
+                    memory: 256M
+                reservations:
+                    cpus: "1.0"
+                    memory: 128M
+        secrets:
+            - raqamliavlod_postgres_database
+            - raqamliavlod_postgres_username
+            - raqamliavlod_postgres_password
+
+    pgbouncer:
+        image: edoburu/pgbouncer
+        entrypoint: ["sh", "/entrypoint.sh"]
+        command: ["pgbouncer", "/etc/pgbouncer/pgbouncer.ini"]
+        volumes:
+            - ./pgbouncer/entrypoint.sh:/entrypoint.sh
+        deploy:
+            resources:
+                limits:
+                    cpus: "2.0"
+                    memory: 64M
+                reservations:
+                    cpus: "1.0"
+                    memory: 64M
+        secrets:
+            - raqamliavlod_postgres_database
+            - raqamliavlod_postgres_username
+            - raqamliavlod_postgres_password
+
+volumes:
+    pg_data:
+
+secrets:
+    raqamliavlod_django_secret_key:
+        external: true
+    raqamliavlod_postgres_database:
+        external: true
+    raqamliavlod_postgres_username:
+        external: true
+    raqamliavlod_postgres_password:
+        external: true
