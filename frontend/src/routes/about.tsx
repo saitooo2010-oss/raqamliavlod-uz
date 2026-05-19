@@ -9,8 +9,6 @@ function AboutPage() {
   return (
     <div className="min-h-screen bg-white font-['Manrope',system-ui,sans-serif]">
       <div className="text-center py-[60px] px-5 bg-[#f8fafc] border-b border-gray-200 relative overflow-hidden">
-        <div className="absolute top-[-100px] left-[-80px] w-[240px] h-[240px] rounded-full bg-[radial-gradient(circle,rgba(0,0,0,0.03),transparent_70%)] pointer-events-none"></div>
-        <div className="absolute bottom-[-100px] right-[-80px] w-[240px] h-[240px] rounded-full bg-[radial-gradient(circle,rgba(0,0,0,0.03),transparent_70%)] pointer-events-none"></div>
         <div className="relative z-10">
           <div className="flex justify-center mb-4">
             <img src={IMG} alt="Raqamli Avlod" className="w-16 h-16 object-contain" />
@@ -41,12 +39,12 @@ function AboutPage() {
           <div className="text-center mb-8">
             <h2 className="text-[22px] sm:text-[28px] font-extrabold text-gray-900 tracking-[-0.01em] flex flex-col items-center">
               Raqamlarda
-              <div className="w-[60px] h-[2px] bg-gray-900 rounded-full mt-3"></div>
+              <div className="w-[60px] h-[2px] bg-[#2563EB] rounded-full mt-3"></div>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[22px]">
             <div className="bg-white border border-gray-200 rounded-xl py-7 px-5 text-center relative overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-gray-300 group">
-              <div className="w-[50px] h-[50px] rounded-xl bg-gray-100 flex items-center justify-center mx-auto mb-3.5 text-gray-700">
+              <div className="w-[50px] h-[50px] rounded-xl bg-[#DBEAFE] flex items-center justify-center mx-auto mb-3.5 text-[#2563EB]">
                 <svg className="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" strokeLinecap="round" strokeLinejoin="round" />
                   <circle cx="9" cy="7" r="4" />
@@ -54,37 +52,37 @@ function AboutPage() {
                   <path d="M16 3.13a4 4 0 0 1 0 7.75" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <div className="text-[36px] font-extrabold text-gray-900 leading-none">50K+</div>
+              <div className="text-[36px] font-extrabold text-[#2563EB] leading-none">50K+</div>
               <div className="text-gray-500 text-sm mt-2 font-medium">O'quvchilar</div>
             </div>
             <div className="bg-white border border-gray-200 rounded-xl py-7 px-5 text-center relative overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-gray-300 group">
-              <div className="w-[50px] h-[50px] rounded-xl bg-gray-100 flex items-center justify-center mx-auto mb-3.5 text-gray-700">
+              <div className="w-[50px] h-[50px] rounded-xl bg-[#FEF9C3] flex items-center justify-center mx-auto mb-3.5 text-[#CA8A04]">
                 <svg className="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M22 10v6M2 10l10-5 10 5-10 5z" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M6 12v5c3 3 9 3 12 0v-5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <div className="text-[36px] font-extrabold text-gray-900 leading-none">120+</div>
+              <div className="text-[36px] font-extrabold text-[#CA8A04] leading-none">120+</div>
               <div className="text-gray-500 text-sm mt-2 font-medium">Kurslar</div>
             </div>
             <div className="bg-white border border-gray-200 rounded-xl py-7 px-5 text-center relative overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-gray-300 group">
-              <div className="w-[50px] h-[50px] rounded-xl bg-gray-100 flex items-center justify-center mx-auto mb-3.5 text-gray-700">
+              <div className="w-[50px] h-[50px] rounded-xl bg-[#DCFCE7] flex items-center justify-center mx-auto mb-3.5 text-[#16A34A]">
                 <svg className="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" strokeLinecap="round" strokeLinejoin="round" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
               </div>
-              <div className="text-[36px] font-extrabold text-gray-900 leading-none">14</div>
+              <div className="text-[36px] font-extrabold text-[#16A34A] leading-none">14</div>
               <div className="text-gray-500 text-sm mt-2 font-medium">Viloyatlar</div>
             </div>
             <div className="bg-white border border-gray-200 rounded-xl py-7 px-5 text-center relative overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-gray-300 group">
-              <div className="w-[50px] h-[50px] rounded-xl bg-gray-100 flex items-center justify-center mx-auto mb-3.5 text-gray-700">
+              <div className="w-[50px] h-[50px] rounded-xl bg-[#EDE9FE] flex items-center justify-center mx-auto mb-3.5 text-[#7C3AED]">
                 <svg className="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <circle cx="12" cy="8" r="7" />
                   <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
                 </svg>
               </div>
-              <div className="text-[36px] font-extrabold text-gray-900 leading-none">6+</div>
+              <div className="text-[36px] font-extrabold text-[#7C3AED] leading-none">6+</div>
               <div className="text-gray-500 text-sm mt-2 font-medium">Yillik tajriba</div>
             </div>
           </div>
@@ -95,13 +93,13 @@ function AboutPage() {
         <div className="text-center mb-8">
           <h2 className="text-[22px] sm:text-[28px] font-extrabold text-gray-900 tracking-[-0.01em] flex flex-col items-center">
             Bizning qadriyatlarimiz
-            <div className="w-[60px] h-[2px] bg-gray-900 rounded-full mt-3"></div>
+            <div className="w-[60px] h-[2px] bg-[#DC2626] rounded-full mt-3"></div>
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-[22px]">
           <div className="bg-white border border-gray-200 rounded-xl p-[30px] relative overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-gray-300 group">
-            <div className="w-[56px] h-[56px] rounded-xl bg-gray-100 flex items-center justify-center mb-4">
-              <svg className="w-6 h-6 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <div className="w-[56px] h-[56px] rounded-xl bg-[#FEF2F2] flex items-center justify-center mb-4">
+              <svg className="w-6 h-6 text-[#DC2626]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M12 2L2 7l10 5 10-5-10-5z" />
                 <path d="M2 17l10 5 10-5" />
                 <path d="M2 12l10 5 10-5" />
@@ -111,8 +109,8 @@ function AboutPage() {
             <p className="text-gray-500 text-[14.5px]">Soha mutaxassislari tomonidan tayyorlangan amaliy kurslar va materiallar.</p>
           </div>
           <div className="bg-white border border-gray-200 rounded-xl p-[30px] relative overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-gray-300 group">
-            <div className="w-[56px] h-[56px] rounded-xl bg-gray-100 flex items-center justify-center mb-4">
-              <svg className="w-6 h-6 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <div className="w-[56px] h-[56px] rounded-xl bg-[#FFF7ED] flex items-center justify-center mb-4">
+              <svg className="w-6 h-6 text-[#EA580C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                 <circle cx="9" cy="7" r="4" />
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -123,8 +121,8 @@ function AboutPage() {
             <p className="text-gray-500 text-[14.5px]">Forum va kontestlar orqali bir-biriga yordam beradigan faol IT-jamoa.</p>
           </div>
           <div className="bg-white border border-gray-200 rounded-xl p-[30px] relative overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-gray-300 group">
-            <div className="w-[56px] h-[56px] rounded-xl bg-gray-100 flex items-center justify-center mb-4">
-              <svg className="w-6 h-6 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <div className="w-[56px] h-[56px] rounded-xl bg-[#DBEAFE] flex items-center justify-center mb-4">
+              <svg className="w-6 h-6 text-[#2563EB]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M13 2L3 14h8l-2 8 10-12h-8l2-8z" />
               </svg>
             </div>
@@ -139,37 +137,37 @@ function AboutPage() {
           <div className="text-center mb-8">
             <h2 className="text-[22px] sm:text-[28px] font-extrabold text-gray-900 tracking-[-0.01em] flex flex-col items-center">
               Bizning yo'limiz
-              <div className="w-[60px] h-[2px] bg-gray-900 rounded-full mt-3"></div>
+              <div className="w-[60px] h-[2px] bg-[#EA580C] rounded-full mt-3"></div>
             </h2>
           </div>
           <div className="max-w-[760px] mx-auto relative before:absolute before:left-[19px] before:top-3 before:bottom-3 before:w-[2px] before:bg-gray-300 before:rounded-full">
             <div className="relative pl-[56px] pb-8 last:pb-0">
-              <div className="absolute left-[8px] top-1 w-[22px] h-[22px] bg-white border-[3px] border-gray-900 rounded-full"></div>
-              <div className="text-gray-700 text-sm font-bold tracking-[0.04em]">2019</div>
+              <div className="absolute left-[8px] top-1 w-[22px] h-[22px] bg-white border-[3px] border-[#DC2626] rounded-full"></div>
+              <div className="text-[#DC2626] text-sm font-bold tracking-[0.04em]">2019</div>
               <h3 className="text-[18px] font-bold text-gray-900 tracking-[-0.01em] mt-1.5 mb-2">Loyihaning boshlanishi</h3>
               <p className="text-gray-500 text-[14.5px]">"Raqamli Avlod" tashabbusi yoshlar uchun IT-ta'lim platformasi sifatida ishga tushirildi.</p>
             </div>
             <div className="relative pl-[56px] pb-8 last:pb-0">
-              <div className="absolute left-[8px] top-1 w-[22px] h-[22px] bg-white border-[3px] border-gray-700 rounded-full"></div>
-              <div className="text-gray-700 text-sm font-bold tracking-[0.04em]">2021</div>
+              <div className="absolute left-[8px] top-1 w-[22px] h-[22px] bg-white border-[3px] border-[#EA580C] rounded-full"></div>
+              <div className="text-[#EA580C] text-sm font-bold tracking-[0.04em]">2021</div>
               <h3 className="text-[18px] font-bold text-gray-900 tracking-[-0.01em] mt-1.5 mb-2">Onlayn kurslar va forum</h3>
               <p className="text-gray-500 text-[14.5px]">Birinchi tekin onlayn kurslar va o'quvchilar uchun forum platformasi ochildi.</p>
             </div>
             <div className="relative pl-[56px] pb-8 last:pb-0">
-              <div className="absolute left-[8px] top-1 w-[22px] h-[22px] bg-white border-[3px] border-gray-600 rounded-full"></div>
-              <div className="text-gray-700 text-sm font-bold tracking-[0.04em]">2023</div>
+              <div className="absolute left-[8px] top-1 w-[22px] h-[22px] bg-white border-[3px] border-[#CA8A04] rounded-full"></div>
+              <div className="text-[#CA8A04] text-sm font-bold tracking-[0.04em]">2023</div>
               <h3 className="text-[18px] font-bold text-gray-900 tracking-[-0.01em] mt-1.5 mb-2">Respublika tanlovlari</h3>
               <p className="text-gray-500 text-[14.5px]">"Raqamli avlod qizlari" va DG Kontest kabi yirik miqyosdagi tanlovlar boshlandi.</p>
             </div>
             <div className="relative pl-[56px] pb-8 last:pb-0">
-              <div className="absolute left-[8px] top-1 w-[22px] h-[22px] bg-white border-[3px] border-gray-500 rounded-full"></div>
-              <div className="text-gray-700 text-sm font-bold tracking-[0.04em]">2024</div>
+              <div className="absolute left-[8px] top-1 w-[22px] h-[22px] bg-white border-[3px] border-[#16A34A] rounded-full"></div>
+              <div className="text-[#16A34A] text-sm font-bold tracking-[0.04em]">2024</div>
               <h3 className="text-[18px] font-bold text-gray-900 tracking-[-0.01em] mt-1.5 mb-2">Xalqaro hamkorlik</h3>
               <p className="text-gray-500 text-[14.5px]">BAA, Buyuk Britaniya va boshqa davlatlar bilan ta'lim sayohatlari va hamkorlik dasturlari.</p>
             </div>
             <div className="relative pl-[56px] pb-0">
-              <div className="absolute left-[8px] top-1 w-[22px] h-[22px] bg-white border-[3px] border-gray-400 rounded-full"></div>
-              <div className="text-gray-700 text-sm font-bold tracking-[0.04em]">2025</div>
+              <div className="absolute left-[8px] top-1 w-[22px] h-[22px] bg-white border-[3px] border-[#7C3AED] rounded-full"></div>
+              <div className="text-[#7C3AED] text-sm font-bold tracking-[0.04em]">2025</div>
               <h3 className="text-[18px] font-bold text-gray-900 tracking-[-0.01em] mt-1.5 mb-2">Yangi cho'qqilar</h3>
               <p className="text-gray-500 text-[14.5px]">50 mingdan ortiq o'quvchi va Guinness rekordini yangilagan IT-yoshlar bilan birga.</p>
             </div>

@@ -30,7 +30,7 @@ function App() {
           <div className="flex justify-center mb-4">
             <img src={IMG} alt="Raqamli Avlod" className="w-16 h-16 object-contain" />
           </div>
-          <span className="inline-flex items-center gap-2 py-1.5 px-3.5 bg-gray-100 border border-gray-200 text-gray-700 text-[13px] font-semibold rounded-full mb-4">
+          <span className="inline-flex items-center gap-2 py-1.5 px-3.5 bg-[#1E293B] border border-[#334155] text-white text-[13px] font-semibold rounded-full mb-4">
             <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="12" cy="12" r="10" />
               <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
@@ -38,14 +38,26 @@ function App() {
             O'zbekiston yoshlari uchun
           </span>
           <h1 className="text-[28px] sm:text-[42px] font-extrabold text-gray-900 leading-tight tracking-[-0.02em] mb-3">
-            Raqamli kelajak <span className="text-gray-900">bilim bilan</span> boshlanadi
+            Raqamli kelajak <span className="text-[#1E293B]">bilim bilan</span> boshlanadi
           </h1>
           <p className="text-gray-500 text-base max-w-[600px] mx-auto mb-6">Tekin onlayn kurslar, faol forum va respublika miqyosidagi tanlovlar — bularning barchasi bir joyda.</p>
-          <div className="flex justify-center gap-8 flex-wrap pt-4">
-            <div><div className="text-[26px] font-extrabold text-gray-900">50K+</div><div className="text-gray-500 text-[13px]">O'quvchilar</div></div>
-            <div><div className="text-[26px] font-extrabold text-gray-900">120+</div><div className="text-gray-500 text-[13px]">Kurslar</div></div>
-            <div><div className="text-[26px] font-extrabold text-gray-900">14</div><div className="text-gray-500 text-[13px]">Viloyatlar</div></div>
-            <div><div className="text-[26px] font-extrabold text-gray-900">6+</div><div className="text-gray-500 text-[13px]">Yillik tajriba</div></div>
+          <div className="flex justify-center gap-12 flex-wrap pt-4">
+            <div className="text-center">
+              <div className="text-[32px] font-black text-red-600">50K+</div>
+              <div className="text-gray-500 text-[13px] font-medium mt-1">O'quvchilar</div>
+            </div>
+            <div className="text-center">
+              <div className="text-[32px] font-black text-yellow-500">120+</div>
+              <div className="text-gray-500 text-[13px] font-medium mt-1">Kurslar</div>
+            </div>
+            <div className="text-center">
+              <div className="text-[32px] font-black text-blue-600">14</div>
+              <div className="text-gray-500 text-[13px] font-medium mt-1">Viloyatlar</div>
+            </div>
+            <div className="text-center">
+              <div className="text-[32px] font-black text-green-600">6+</div>
+              <div className="text-gray-500 text-[13px] font-medium mt-1">Yillik tajriba</div>
+            </div>
           </div>
         </div>
       </div>
@@ -53,14 +65,14 @@ function App() {
       <div className="max-w-[1200px] mx-auto px-5 py-[60px]">
         <div className="flex items-center justify-between flex-wrap gap-3 mb-7">
           <h2 className="text-[22px] sm:text-[28px] font-extrabold text-gray-900 tracking-[-0.01em] flex items-center gap-2.5">
-            <span className="w-1 h-6 bg-gray-900 rounded-full"></span>
+            <span className="w-1 h-6 bg-[#1E293B] rounded-full"></span>
             Dolzarb yangiliklar
           </h2>
-          <Link to="/news" className="text-gray-600 text-sm font-semibold flex items-center gap-1.5 hover:gap-2.5 hover:text-gray-900 transition-all">Barchasini ko'rish →</Link>
+          <Link to="/news" className="text-[#1E293B] text-sm font-semibold flex items-center gap-1.5 hover:gap-2.5 transition-all">Barchasini ko'rish →</Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[22px]">
           {NEWS.map((item) => (
-            <Link key={item.id} to={`/news/${item.slug}`} className="group bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-gray-300 relative">
+            <Link key={item.id} to={`/news/${item.slug}`} className="group bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-[#1E293B]">
               <div className="aspect-[16/10] overflow-hidden relative bg-gray-100">
                 {item.thumbnail ? (
                   <img src={item.thumbnail} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -75,9 +87,9 @@ function App() {
                   </div>
                 )}
               </div>
-              <div className="p-5 flex flex-col flex-1">
-                <h3 className="text-[15.5px] text-gray-900 mb-3.5 font-bold leading-snug line-clamp-3 flex-1 tracking-[-0.01em]">{item.title}</h3>
-                <span className="text-[12.5px] text-gray-400 flex items-center gap-1.5 font-medium">
+              <div className="p-5">
+                <h3 className="text-[15.5px] text-gray-900 mb-3 font-bold leading-snug line-clamp-3 group-hover:text-[#1E293B] transition-colors">{item.title}</h3>
+                <span className="text-[12.5px] text-gray-400 flex items-center gap-1.5">
                   <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <rect x="3" y="4" width="18" height="18" rx="2" />
                     <line x1="16" y1="2" x2="16" y2="6" />
@@ -90,22 +102,21 @@ function App() {
             </Link>
           ))}
         </div>
-        <Link to="/news" className="flex items-center justify-center gap-2 mt-8 py-3 px-7 bg-white border border-gray-300 rounded-xl text-gray-700 text-sm font-bold w-fit mx-auto transition-all duration-300 hover:border-gray-400 hover:text-gray-900 hover:-translate-y-0.5 hover:shadow-md">Barcha yangiliklar →</Link>
+        <Link to="/news" className="flex items-center justify-center gap-2 mt-8 py-3 px-7 bg-[#1E293B] rounded-xl text-white text-sm font-bold w-fit mx-auto transition-all duration-300 hover:bg-[#334155] hover:-translate-y-0.5 hover:shadow-md">Barcha yangiliklar →</Link>
       </div>
 
-      <div className="bg-gray-50 py-[60px] relative overflow-hidden">
-        <div className="absolute -top-[100px] -right-[100px] w-[360px] h-[360px] bg-[radial-gradient(circle,rgba(0,0,0,0.03),transparent_70%)] pointer-events-none rounded-full"></div>
-        <div className="max-w-[1200px] mx-auto px-5 relative">
+      <div className="bg-gray-50 py-[60px]">
+        <div className="max-w-[1200px] mx-auto px-5">
           <div className="flex items-center justify-between flex-wrap gap-3 mb-7">
             <h2 className="text-[22px] sm:text-[28px] font-extrabold text-gray-900 tracking-[-0.01em] flex items-center gap-2.5">
-              <span className="w-1 h-6 bg-gray-900 rounded-full"></span>
+              <span className="w-1 h-6 bg-[#1E293B] rounded-full"></span>
               Yangi kurslar
             </h2>
-            <Link to="/courses" className="text-gray-600 text-sm font-semibold flex items-center gap-1.5 hover:gap-2.5 hover:text-gray-900 transition-all">Barchasini ko'rish →</Link>
+            <Link to="/courses" className="text-[#1E293B] text-sm font-semibold flex items-center gap-1.5 hover:gap-2.5 transition-all">Barchasini ko'rish →</Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[22px]">
             {COURSES.map((course) => (
-              <Link key={course.id} to={`/course/${course.slug}`} className="group bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-gray-300">
+              <Link key={course.id} to={`/course/${course.slug}`} className="group bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-[#1E293B]">
                 <div className="aspect-[16/9] overflow-hidden relative bg-gray-100">
                   {course.thumbnail ? (
                     <img src={course.thumbnail} alt={course.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -118,14 +129,14 @@ function App() {
                     </div>
                   )}
                 </div>
-                <div className="p-5 flex flex-col gap-2.5">
-                  <h3 className="text-lg text-gray-900 font-extrabold tracking-[-0.01em]">{course.title}</h3>
-                  <span className="text-gray-600 text-[13.5px] font-bold flex items-center gap-1.5 group-hover:gap-2.5 transition-all">Davom ettirish →</span>
+                <div className="p-5">
+                  <h3 className="text-lg text-gray-900 font-extrabold tracking-[-0.01em] mb-2 group-hover:text-[#1E293B] transition-colors">{course.title}</h3>
+                  <span className="text-[#1E293B] text-[13.5px] font-bold flex items-center gap-1.5 group-hover:gap-2.5 transition-all">Davom ettirish →</span>
                 </div>
               </Link>
             ))}
           </div>
-          <Link to="/courses" className="flex items-center justify-center gap-2 mt-8 py-3 px-7 bg-white border border-gray-300 rounded-xl text-gray-700 text-sm font-bold w-fit mx-auto transition-all duration-300 hover:border-gray-400 hover:text-gray-900 hover:-translate-y-0.5 hover:shadow-md">Barchasini ko'rish →</Link>
+          <Link to="/courses" className="flex items-center justify-center gap-2 mt-8 py-3 px-7 bg-[#1E293B] rounded-xl text-white text-sm font-bold w-fit mx-auto transition-all duration-300 hover:bg-[#334155] hover:-translate-y-0.5 hover:shadow-md">Barchasini ko'rish →</Link>
         </div>
       </div>
 

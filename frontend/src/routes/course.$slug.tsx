@@ -57,14 +57,14 @@ function CourseComponent() {
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <div className="max-w-7xl mx-auto px-4 py-6">
         <div className="mb-6">
-          <Link to="/" className="text-sm text-gray-500 hover:text-gray-900 transition">
+          <Link to="/" className="text-sm text-gray-500 hover:text-blue-700 transition-all duration-300 flex items-center gap-1 hover:gap-2">
             ← Bosh sahifaga qaytish
           </Link>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="flex-1 min-w-0">
-            <div className="aspect-video rounded-2xl overflow-hidden bg-black shadow-sm">
+            <div className="aspect-video rounded-2xl overflow-hidden bg-black shadow-lg">
               <iframe
                 className="w-full h-full"
                 src={currentCourse.video_url}
@@ -79,7 +79,7 @@ function CourseComponent() {
                   <Link
                     to="/course/$slug"
                     params={{ slug: prevCourse.slug }}
-                    className="px-4 py-2 text-sm bg-white border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition"
+                    className="px-5 py-2.5 text-sm bg-white border-2 border-gray-200 rounded-xl text-gray-700 font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-blue-600 hover:text-blue-700"
                   >
                     ← Oldingi dars
                   </Link>
@@ -88,7 +88,7 @@ function CourseComponent() {
                   <Link
                     to="/course/$slug"
                     params={{ slug: nextCourse.slug }}
-                    className="px-4 py-2 text-sm bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition"
+                    className="px-5 py-2.5 text-sm bg-blue-700 text-white rounded-xl font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:bg-blue-800 flex items-center gap-1"
                   >
                     Keyingi dars →
                   </Link>
@@ -96,23 +96,23 @@ function CourseComponent() {
               </div>
             </div>
 
-            <div className="flex gap-4 border-b border-gray-200">
+            <div className="flex gap-6 border-b border-gray-200">
               <button
                 onClick={() => setActiveTab('description')}
-                className={`pb-3 px-2 text-sm font-semibold transition-colors cursor-pointer ${
+                className={`pb-3 px-1 text-sm font-semibold transition-all duration-300 cursor-pointer ${
                   activeTab === 'description'
-                    ? 'text-gray-900 border-b-2 border-gray-900'
-                    : 'text-gray-500 hover:text-gray-700'
+                    ? 'text-blue-700 border-b-2 border-blue-700'
+                    : 'text-gray-500 hover:text-blue-700 hover:border-b-2 hover:border-blue-300'
                 }`}
               >
                 Tavsif
               </button>
               <button
                 onClick={() => setActiveTab('comments')}
-                className={`pb-3 px-2 text-sm font-semibold transition-colors cursor-pointer ${
+                className={`pb-3 px-1 text-sm font-semibold transition-all duration-300 cursor-pointer ${
                   activeTab === 'comments'
-                    ? 'text-gray-900 border-b-2 border-gray-900'
-                    : 'text-gray-500 hover:text-gray-700'
+                    ? 'text-blue-700 border-b-2 border-blue-700'
+                    : 'text-gray-500 hover:text-blue-700 hover:border-b-2 hover:border-blue-300'
                 }`}
               >
                 Izohlar ({comments.length})
@@ -122,32 +122,32 @@ function CourseComponent() {
             <div className="mt-6">
               {activeTab === 'description' && (
                 <div>
-                  <h1 className="text-2xl font-bold">{currentCourse.title}</h1>
+                  <h1 className="text-2xl font-bold text-blue-700">{currentCourse.title}</h1>
                   <p className="mt-4 text-gray-600 leading-relaxed">{currentCourse.description}</p>
                 </div>
               )}
 
               {activeTab === 'comments' && (
                 <div>
-                  <div className="mb-6 p-4 bg-white rounded-xl border border-gray-200">
-                    <h3 className="font-semibold text-gray-900 mb-3">Izoh qoldirish</h3>
+                  <div className="mb-6 p-5 bg-white rounded-2xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-md">
+                    <h3 className="font-bold text-blue-700 mb-3 text-lg">Izoh qoldirish</h3>
                     <input
                       type="text"
                       placeholder="Ismingiz"
                       value={commentName}
                       onChange={(e) => setCommentName(e.target.value)}
-                      className="w-full mb-3 px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 transition"
+                      className="w-full mb-3 px-4 py-2.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-600 transition-all duration-300"
                     />
                     <textarea
                       placeholder="Izohingiz..."
                       value={newComment}
                       onChange={(e) => setNewComment(e.target.value)}
                       rows={3}
-                      className="w-full mb-3 px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 transition resize-none"
+                      className="w-full mb-3 px-4 py-2.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-600 transition-all duration-300 resize-none"
                     />
                     <button
                       onClick={handleAddComment}
-                      className="px-5 py-2 bg-gray-900 text-white text-sm font-semibold rounded-lg hover:bg-gray-800 transition cursor-pointer"
+                      className="px-6 py-2.5 bg-orange-500 text-white text-sm font-semibold rounded-xl hover:bg-orange-600 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 cursor-pointer"
                     >
                       Yuborish
                     </button>
@@ -158,12 +158,12 @@ function CourseComponent() {
                       <p className="text-gray-500 text-center py-8">Hali hech qanday izoh yo'q. Birinchi bo'lib izoh qoldiring!</p>
                     ) : (
                       comments.map((comment) => (
-                        <div key={comment.id} className="p-4 bg-white rounded-xl border border-gray-200">
+                        <div key={comment.id} className="p-4 bg-white rounded-xl border border-gray-200 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-red-300">
                           <div className="flex justify-between items-start mb-2">
-                            <span className="font-semibold text-gray-900">{comment.name}</span>
+                            <span className="font-bold text-red-600">{comment.name}</span>
                             <span className="text-xs text-gray-400">{comment.date}</span>
                           </div>
-                          <p className="text-gray-600 text-sm">{comment.text}</p>
+                          <p className="text-gray-600 text-sm leading-relaxed">{comment.text}</p>
                         </div>
                       ))
                     )}
@@ -174,18 +174,23 @@ function CourseComponent() {
           </div>
 
           <div className="w-full lg:w-80 shrink-0">
-            <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm lg:sticky lg:top-6">
-              <div className="p-4 bg-gray-50 border-b border-gray-200 font-bold text-sm">Darslar seriyasi</div>
+            <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md lg:sticky lg:top-6 transition-all duration-300 hover:shadow-xl">
+              <div className="p-4 bg-blue-700 text-white font-bold text-sm tracking-wide">Darslar seriyasi</div>
               <div className="max-h-[450px] overflow-y-auto p-2 space-y-1">
-                {seriesCourses.map((course) => (
+                {seriesCourses.map((course, idx) => (
                   <Link
                     key={course.id}
                     to="/course/$slug"
                     params={{ slug: course.slug }}
-                    className="block p-3 rounded-xl text-sm transition hover:bg-gray-100"
-                    activeProps={{ className: "bg-gray-100 text-gray-900 font-bold" }}
+                    className={`block p-3 rounded-xl text-sm transition-all duration-300 ${
+                      course.slug === slug 
+                        ? 'bg-green-600 text-white font-bold shadow-md' 
+                        : 'text-gray-700 hover:bg-blue-50 hover:translate-x-1'
+                    }`}
                   >
-                    <span className="truncate block">{course.title}</span>
+                    <span className="truncate block">
+                      {idx + 1}. {course.title}
+                    </span>
                   </Link>
                 ))}
               </div>
